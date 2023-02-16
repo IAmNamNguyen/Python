@@ -2,16 +2,23 @@
 # Kiểm tra xem N có phải số nguyên tố hay không?
 # Số nguyên tố là số chỉ có 2 ước duy nhất là 1 và chính nó
 
-#Nhập N:
-N = float(input("Nhập số N: "))
+from math import sqrt
 
-#Đặt biến điều kiện:
-dieuKien1 = N%N == 0
-dieuKien2 = N%1 == 0
-dieuKien = [dieuKien1, dieuKien2]
+#Nhập N:
+N = int(input("Nhập số N nguyên dương: "))
+while N<2:
+    N = int(input("Để kiểm tra số nguyên tố, cần phải nhập 1 số lớn hơn 1: "))
+
+#Biến check nguyên tố:
+laNguyenTo = True
 
 #Thuật toán:
-if False in dieuKien:
-  print("N không phải số nguyên tố")
-else:
-  print("N là số nguyên tố")
+for i in range(2,int(sqrt(N))+1): #Căn bậc 2 của N
+  if N%i == 0:
+     laNguyenTo = False
+     print(N,"không phải là só nguyên tố")
+     break
+
+if laNguyenTo == True:
+   print(N,"là số nguyên tố")
+   
