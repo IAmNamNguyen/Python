@@ -2,7 +2,9 @@
 # Với N là số tự nhiên được nhập từ bàn phím
 
 #Nhập N:
-N = float(input("Nhập số N: "))
+N = int(input("Nhập số N: "))
+while N<0:
+    N = int(input("Cần nhập số tự nhiên N (N>0): "))
 
 #Biến số & Biến tổng
 so = 1
