@@ -3,7 +3,7 @@
 
 #Nhập N:
 N = int(input("Nhập số N: "))
-while N<0:
+while N<1:
     N = int(input("Cần nhập số tự nhiên N (N>0): "))
 
 #Biến số & Biến tổng
