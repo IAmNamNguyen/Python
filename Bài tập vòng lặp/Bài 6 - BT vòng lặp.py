@@ -6,12 +6,14 @@ N = int(input("Nhập số nguyên N: "))
 while N<2:
   N = int(input("Cần số nguyên N lớn hơn 2, xin nhập lại: "))
 
+giatri = N
+
 thuaSoNguyenTo = []
 
 for i in range(2,N+1):
   while N%i == 0:
     thuaSoNguyenTo += (i,)
     N = N/i
-    
-print("N =",N,"gồm tích thừa số nguyên tố là:", thuaSoNguyenTo)
+
+print("N =",giatri,"gồm tích thừa số nguyên tố là:", thuaSoNguyenTo)
 
