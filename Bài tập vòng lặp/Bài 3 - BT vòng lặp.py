@@ -11,12 +11,13 @@ while N<2:
 
 #Biến check nguyên tố:
 laNguyenTo = True
+canBacHaiN = int(sqrt(N)) #Căn bậc 2 của N
 
 #Thuật toán:
-for i in range(2,int(sqrt(N))+1): #Căn bậc 2 của N
+for i in range(2,canBacHaiN+1): 
   if N%i == 0:
      laNguyenTo = False
-     print(N,"không phải là só nguyên tố")
+     print(N,"không phải là số nguyên tố")
      break
 
 if laNguyenTo == True:
