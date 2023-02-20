@@ -9,6 +9,6 @@ uocN = []
 
 for n in range(1,N+1):
     if N%n == 0:
-        uocN += (n,)
+        uocN += (n,) #Tương đương uocN.append
 
 print("Các ước của số nguyên N là:",uocN)
