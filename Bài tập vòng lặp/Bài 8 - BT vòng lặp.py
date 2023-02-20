@@ -8,14 +8,24 @@ N = int(input("Nhập số N: "))
 while N<2:
     N = int(input("N phải lớn hơn 1, xin nhập lại: "))
 
+# Lấy tất cả các số từ 2 đến N
 num = []
+for n in range(2,N+1):
+    num += (n,) #num.append
+#Test:
+#print("Danh sách từ 2 đến",N,"là:",num)
 
-for i in range(2,N+1):
-    for s in range(2,int(sqrt(i)+1)):
+# Check số nguyên tố và loại khỏi danh sách những sô không phải số nguyên tố
+khongPhaiSoNguyenTo = []
+for i in num:
+    canBacHai = int(sqrt(i))
+    #Test:
+    #print("Căn của",i,"là:",canBacHai)
+    for s in range(2,canBacHai+1):
         if i%s == 0:
-            num += (i,)
+            khongPhaiSoNguyenTo += (i,)
 
+soNguyenTo = set(num) ^ set(khongPhaiSoNguyenTo)
 
-
-print("Các số nguyên tố từ 2 đến N (",N,") là:",num)
+print("Các số nguyên tố từ 2 đến N (",N,") là:",soNguyenTo)
      
