@@ -5,8 +5,8 @@ import math
 
 # Nhập N:
 N = int(input("Nhập số phân tử N cho A: "))
-# Tạo danh sách A có N phân tử gồm những số nguyên ngẫu nhiên từ khoảng -50 đến 50
-A = [random.randint(-50, 50) for i in range(N)] # Gioi han random co the thay doi
+# Tạo danh sách A có N phân tử gồm những số nguyên ngẫu nhiên từ khoảng -20 đến 20
+A = [random.randint(-20, 20) for i in range(N)] # Gioi han random co the thay doi
 # Xuất danh sách A:
 print("Danh sách A hiện tại gồm:",A)
 
@@ -36,35 +36,39 @@ for x in A_loc: #Xét các giá trị trong danh sách đã lọc số lặp
         chanDuong = True
 if chanDuong == True: #điều kiện khi có số chẵn dương
     maxChanduong = max(A_chanDuong) #Số chẵn dương lớn nhất
-    print("Số chẵn dương lớn nhất trong A là:",maxChanduong) #Xuất kết quả
-if chanDuong == False: #điều kiện khi không có số chẵn dương
-    print("A không có số chẵn dương.") 
+    print("4. Số chẵn dương lớn nhất trong A là:",maxChanduong) #Xuất kết quả
+else: #điều kiện khi không có số chẵn dương
+    print("4. A không có số chẵn dương.") 
 
 # 5. Tìm số âm lẻ nhỏ nhất trong A
 A_amLe = [] #Khởi tạo danh sách số âm lẻ
 leAm = False #Biến logic
 for x in A_loc:
     if x % 2 != 0 and x < 0: #Điều kiện số lẻ âm
-        A_amLe += x #Thêm x vào danh sách
+        A_amLe.append(x) #Thêm x vào danh sách
         leAm = True
 if leAm == True:
     minLeAm = min(A_amLe) #Số lẻ âm nhỏ nhất
-    print("Số âm lẻ nhỏ nhất trong A là:",minLeAm) #Xuất kết quả
-if leAm == False:
-    print("A không có số lẻ âm.")
+    print("5. Số âm lẻ nhỏ nhất trong A là:",minLeAm) #Xuất kết quả
+else:
+    print("5. A không có số lẻ âm.")
 
 # 6. Tìm các số chính phương trong A
 # Số chính phương là các cố có căn bậc 2 là số nguyên
+# Số chính phương luôn hơn hơn 0
 A_chinhPhuong = [] #Khởi tạo danh sách số chính phương
 chinhPhuong = False #Biến logic
 for x in A_loc:
-    if math.sqrt(x) == int(math.sqrt(x)): #Kết quả căn bậc 2 của x liệu có bằng số nguyên kết quả căn bậc 2 của x
-        A_chinhPhuong += x
-        chinhPhuong = True
+    if x > 0: # Kiểm tra x có dương?
+        can2x = math.sqrt(x)
+        can2xint = int(can2x)
+        if can2x == can2xint: #Kết quả căn bậc 2 của x liệu có bằng số nguyên kết quả căn bậc 2 của x
+            A_chinhPhuong.append(x)
+            chinhPhuong = True
 if chinhPhuong == True:
-    print("Các số chính phương trong A là:",A_chinhPhuong)
-if chinhPhuong == False:
-    print("A không có số chính phương")
+    print("6. Các số chính phương trong A là:",A_chinhPhuong)
+else:
+    print("6. A không có số chính phương")
 
 # 7. Tìm các số nguyên tố trong A
 # Số nguyên tố là các số chỉ chia hết cho 1 và chính nó
@@ -80,10 +84,27 @@ for x in A_loc:
                 break #Kết thúc vòng lặp
     #Nếu x là số nguyên tố thì thêm vào danh sách
     if soNguyenTo == True:
-        A_nguyenTo += x
+        A_nguyenTo.append(x)
 if soNguyenTo == False:
-    print("A không có số nguyên tố")
+    print("7. A không có số nguyên tố")
 else:
-    print("A có các số nguyên tố là:",A_nguyenTo)
+    print("7. A có các số nguyên tố là:",A_nguyenTo)
 
-# 8. 
+# 8. Tính trung bình cộng của các phân tử trong danh sách A
+# sum() sẽ tính tổng của tất cả các phần tử có trong danh sách A
+# len() sẽ đếm có bao nhiêu phần tử có trong danh sách A
+trungBinhCong = sum(A) / len(A)
+# Xuất kết quả
+print("8. Trung bình cộng của dãy A là:",trungBinhCong)
+
+# 9. Tìm các số lớn hơn giá trị trung bình và in ra vị trí của các số đó
+largerthanaverage = [] #Khởi tạo danh sách các giá trị lớn hơn trung bình cộng
+viTri = [] #Khởi tạo danh sách các vị trí lần lượt của số lớn hơn trung bình cộng
+soLonHonTrungBinh = False #Biến logic
+for vitri, x in enumerate(A): #Sử dụng hàm enumerate() để lấy chỉ số và giá trị của từng phần tử
+    if x > trungBinhCong:
+        largerthanaverage.append(x)
+        viTri.append(vitri)
+        soLonHonTrungBinh = True
+if soLonHonTrungBinh == True:
+    print("Các số lớn hơn số trung bình lần lượt là:",largerthanaverage,"tương ứng với các vị trí trong dãy A là:",viTri)
