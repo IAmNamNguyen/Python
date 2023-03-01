@@ -5,34 +5,34 @@ import math
 
 # Nhập N:
 N = int(input("Nhập số phân tử N cho A: "))
-# Tạo danh sách A có N phân tử gồm những số nguyên ngẫu nhiên từ khoảng -999 đến 999
-A = [random.randint(-999, 999) for i in range(N)]
+# Tạo danh sách A có N phân tử gồm những số nguyên ngẫu nhiên từ khoảng -50 đến 50
+A = [random.randint(-50, 50) for i in range(N)] # Gioi han random co the thay doi
 # Xuất danh sách A:
 print("Danh sách A hiện tại gồm:",A)
 
 # 1. Sắp xếp A theo thứ tự tăng dần
 A_tangDan = sorted(A)
-print("Danh sách A theo thứ tự tăng dần là:",A_tangDan)
+print("1. Danh sách A theo thứ tự tăng dần là:",A_tangDan)
 
 # 2. Loại bỏ bớt các phần tử giống nhau sao cho mỗi giá trị chỉ xuất hiện 1 lần duy nhất
-A_loc1 = dict.fromkeys(A) #dict.fromkeys() sẽ là 1 danh sách từ điển nơi mà các keys là các phần từ duy nhất trong danh sách
-A_loc = sorted(A_loc1) #Sắp xếp lại thứ tự từ điển
+#dict.fromkeys() sẽ là 1 danh sách từ điển nơi mà các keys là các phần từ duy nhất trong danh sách
+A_loc = sorted(dict.fromkeys(A)) #Sắp xếp lại thứ tự từ điển
 # Xuất kết quả
-print("Danh sách A đã lược bớt giá trị lặp là:",A_loc)
+print("2. Danh sách A đã lược bớt giá trị lặp là:",A_loc)
 
 # 3. Tìm số lớn nhất, nhỏ nhất trong A
 A_max = max(A) #Số lớn nhất
 A_min = min(A) #Số bé nhất
 # Xuất kết quả:
-print("Số lớn nhất trong A là:",A_max) 
-print("Số bé nhất trong A là:",A_min)
+print("3.1. Số lớn nhất trong A là:",A_max) 
+print("3.2. Số bé nhất trong A là:",A_min)
 
 # 4. Tìm số chẵn dương lớn nhất
 A_chanDuong = [] #Khởi tạo danh sách số chẵn dương
 chanDuong = False #1 biến lôgic kích hoạt điều kiện
 for x in A_loc: #Xét các giá trị trong danh sách đã lọc số lặp
     if x % 2 == 0 and x > 0: #Điều kiện số chẵn dương
-        A_chanDuong += x #Thêm x vào danh sách
+        A_chanDuong.append(x) #Thêm x vào danh sách
         chanDuong = True
 if chanDuong == True: #điều kiện khi có số chẵn dương
     maxChanduong = max(A_chanDuong) #Số chẵn dương lớn nhất
