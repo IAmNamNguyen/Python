@@ -8,7 +8,20 @@ import random
 
 n = int(input("Nhập số tiền N: ")) # Số tiền N xu
 m = int(input("Nhập số phân tử sẽ có trong danh sách S: ")) # Số phân tử sẽ có trong S
-s = [random.randint(1,n+1) for i in range(m)] #Random giá trị xu trong khoảng 1 đến n+1 với m lần 
+
+#Khởi tạo s
+#Cách 1: Random giá trị xu trong khoảng 1 đến n+1 với m lần 
+#Không dùng đến vì vậy đặt nó vào trạng thái comment
+#s = [random.randint(1,n+1) for i in range(m)] 
+
+#Cách 2: Nhập giá trị xu từ bàn phím với m lần bằng vòng lặp
+s = [] #Khai triển 1 danh sách s rỗng
+#Tạo 1 vòng lặp với m lần và nhập từng số 1 với bàn phím
+for i in range(m):
+    giaTriXu = int(input("Nhập giá trị xu thứ " + str(i+1) + ":" ))
+    s.append(giaTriXu)
+
+
 #Xuất ra màn hình các giá trị
 print("Ta có giá trị N xu là:",n,"xu")
 print("Ta có số phân tử trong list S là:",m,"phân tử")
