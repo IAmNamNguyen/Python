@@ -4,22 +4,15 @@
 #- 50 số tiếp theo giá: 3000đ/số
 #- Các số tiếp theo tính giá: 4000đ/số.
 
-#Nhập vào số điện 
-soDien = int(input("Nhập vào số điện: "))
-
-#Với 100 số đầu
-if soDien <= 100:
-    soTien = soDien*2000
-    print("Số tiền cần phải trả cho",soDien,"số điện là:",soTien,"Đồng")
-#Với 50 số tiếp theo (150):
-if 100 < soDien <= 150:
-    soTien = soDien*2500
-    print("Số tiền cần phải trả cho",soDien,"số điện là:",soTien,"Đồng")
-#Với 50 số tiếp theo nữa (200):
-if 150 < soDien <= 200:
-    soTien = soDien*3000
-    print("Số tiền cần phải trả cho",soDien,"số điện là:",soTien,"Đồng")
-#Các số tiếp theo (>200):
-if soDien > 200:
-    soTien = soDien*4000
-    print("Số tiền cần phải trả cho",soDien,"số điện là:",soTien,"Đồng")
+n = int(input("Nhập số điện tiêu thụ: "))
+if n<= 100:
+ t = n*2000
+else:
+  if n <= 150:
+    t = 100*2000+(n-100)*2500
+  else:
+    if n <= 200:
+      t = 100*2000+50*2500+(n-150)*3000
+    else:
+      t = 100*2000+50*2500+50*3000+(n-200)*4000
+print("Số tiền điện phải trả là:",t,"nghìn đồng")
