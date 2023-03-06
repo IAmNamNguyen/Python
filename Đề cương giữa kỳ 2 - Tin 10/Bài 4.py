@@ -16,4 +16,4 @@ for x in range(1,N):
         break #Kết thúc
 
 #Xuất kết quả
-print("Danh sách các số tự nhiên liên tiếp có tổng không vượt quá N là:",soTuNhien)
+print("Các số tự nhiên liên tiếp có tổng không vượt quá N là:",soTuNhien)
