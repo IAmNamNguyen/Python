@@ -18,15 +18,12 @@ m = int(input("Nhập số phân tử sẽ có trong danh sách S: ")) # Số ph
 s = [] #Khai triển 1 danh sách s rỗng
 #Tạo 1 vòng lặp với m lần và nhập từng số 1 với bàn phím
 for i in range(m):
-    giaTriXu = int(input("Nhập giá trị xu thứ " + str(i+1) + ":" ))
-    s.append(giaTriXu)
-
+    s.append(int(input("Nhập giá trị xu thứ " + str(i+1) + ":" )))
 
 #Xuất ra màn hình các giá trị
 print("Ta có giá trị N xu là:",n,"xu")
 print("Ta có số phân tử trong list S là:",m,"phân tử")
 print("Ta có các đồng xu có giá trị là S = ",s)
-
 
 #Thiết lập 1 hàm đổi xu
 def doiXu(S, m, n): #hàm doiXu với tham số lần lượt S, m, n
