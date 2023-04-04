@@ -13,7 +13,7 @@ Tổng 4 lần gửi thư.
 
 # Phân tích ta thấy là sẽ có 1 người chuyên nhận của tất cả mọi người khác và
 #sau đó chuyển tiếp bài của những người khác và của mình cho từng người sao cho mỗi người đều có
-#bài của những người khác. Ta coi như người này là 'monitor' (lớp trưởng) và những
+#bài của những người khác. Ta coi như người này là 'monitor' và những
 # người khác là 'others' đi.
 
 N = int(input("Nhập số học sinh: ")) #Số học sinh tương đương với tổng số bài
