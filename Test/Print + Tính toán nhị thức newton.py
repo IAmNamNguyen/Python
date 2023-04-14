@@ -1,7 +1,20 @@
 from math import comb
-a = int(input('Nhập số a: '))
-b = int(input('Nhập số b: '))
-n = int(input('Nhập số luỹ thừa: '))
+a = input('Nhập a: ')
+b = input('Nhập b: ')
+n = input('Nhập số luỹ thừa: ')
+print(f"Bạn đã nhập a = {a}")
+print(f"Bạn đã nhập b = {b}")
+if n.isdigit():
+    n = int(n)
+    print(f"Bạn đã nhập n = {n}")
+    if n < 0:
+        quit(f"Chương trình này không hỗ trợ luỹ thừa âm (luỹ thừa bạn đã nhập là {n}).")
+else:
+    try:
+        float(n)
+        quit(f"Chương trình này không hỗ trợ luỹ thừa là số thực (luỹ thừa bạn đã nhập là {n})")
+    except ValueError:
+        quit(f"Chương trình này không hỗ trợ luỹ thừa là 1 ký tự hoặc xâu ký tự. (luỹ thừa bạn đã nhập là {n})")
 k = n
 h = 0
 A = []
@@ -38,14 +51,32 @@ def subscripts(num):
                     uni.append(s)
         result = str("".join(uni))
         return result
-print('Đẳng thức là:','('+str(a)+'+'+str(b)+')'+superscripts(n))
-for x in range(n+1):
-    s = comb(n, k)*(a**(n-h))*(b**(n-k))
-    S = 'C'+subscripts(n)+superscripts(h)+str(a)+superscripts(n-h)+str(b)+superscripts(n-k)
-    A.append(s)
-    N.append(S)
-    k = k - 1
-    h = h + 1
-
+print(f"Biểu thức được tạo là: ({str(a)} + {str(b)}){superscripts(n)}")
+if a.isdigit() and b.isdigit():
+    a = int(a)
+    b = int(b)
+    for x in range(n+1):
+        s = comb(n, k)*(a**(n-h))*(b**(n-k))
+        if k == n:
+            S = f"C{subscripts(n)}{superscripts(h)}{str(a)}{superscripts(n)}"
+        if h == n:
+            S = f"C{subscripts(n)}{superscripts(h)}{str(b)}{superscripts(n)}"
+        if k != n and h != n:
+            S = f"C{subscripts(n)}{superscripts(h)}{str(a)}{superscripts(n-h)}{str(b)}{superscripts(n-k)}"
+        A.append(s)
+        N.append(S)
+        k = k - 1
+        h = h + 1
+else:
+    for x in range(n+1):
+        if k == n:
+            S = f"C{subscripts(n)}{superscripts(h)}{str(a)}{superscripts(n)}"
+        if h == n:
+            S = f"C{subscripts(n)}{superscripts(h)}{str(b)}{superscripts(n)}"
+        if k != n and h != n:
+            S = f"C{subscripts(n)}{superscripts(h)}{str(a)}{superscripts(n-h)}{str(b)}{superscripts(n-k)}"
+        N.append(S)
+        k = k - 1
+        h = h + 1
 print(N)
 print(A)
