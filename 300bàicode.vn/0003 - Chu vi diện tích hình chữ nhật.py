@@ -11,9 +11,9 @@ Gồm 1 dòng có 2 số nguyên a, b cách nhau bởi dấu cách theo thứ t�
 Dữ liệu ra
 Là chu vi và diện tích nằm trên cùng một dòng, cách nhau bởi dấu cách.
 '''
+input = input()
+a, b = map(int, input.split())
 
-a = int(input())
-b = int(input())
 cv = (a+b)*2
 dt = a*b
 print(cv, dt)
