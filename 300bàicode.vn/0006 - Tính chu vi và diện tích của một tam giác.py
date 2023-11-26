@@ -21,3 +21,10 @@ Output #1
 
 9.0 2.905
 '''
+from math import sqrt
+input = input()
+a, b, c = map(float ,input.split())
+cv = a + b + c
+p = cv/2
+s = sqrt(p*(p-a)*(p-b)*(p-c))
+print(round(cv,1), round(s,3))
