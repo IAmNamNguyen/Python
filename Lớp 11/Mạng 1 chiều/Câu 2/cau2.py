@@ -1,4 +1,3 @@
-import random
 from sys import path
 from os.path import join
 inp = join(path[0],'cau2.inp')
