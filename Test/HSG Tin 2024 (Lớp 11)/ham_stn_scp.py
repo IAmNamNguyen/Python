@@ -11,9 +11,6 @@ def kt_nt(n):
   time_start = time.time()
   d = 0
   if n <= 1:
-    time_end = time.time()
-    runtime = time_end - time_start
-    print(f"Runtime of the function: {runtime} seconds")
     return 0
   else:
     for i in range(2, int(n**0.5) + 1):
@@ -22,13 +19,7 @@ def kt_nt(n):
       if d == 2:
         break
     if d == 0:
-      time_end = time.time()
-      runtime = time_end - time_start
-      print(f"Runtime of the function: {runtime} seconds")
       return 1
-    time_end = time.time()
-    runtime = time_end - time_start
-    print(f"Runtime of the function: {runtime} seconds")
     return 0
 #Số chính phương là số tự nhiên có căn bậc hai là một số tự nhiên, 
 #hay nói cách khác, số chính phương bằng bình phương của một số nguyên.
@@ -36,24 +27,16 @@ def kt_nt(n):
 #Ý tưởng 1: Dùng vòng lặp để xem n có tồn tại số nguyên mà bình phương lên thì bằng n 
 def kt_cp(n):
   print("Kiểm tra số chính phương")
-  time_start = time.time()
   d=0
   for i in range(1,int(n**0.5)+1):
     if i*i == n:
       d += 1
-  time_end = time.time()
-  runtime = time_end - time_start
-  print(f"Runtime of the function: {runtime} seconds")
   if d != 0:
     return 1
 #Ý tưởng 2: Kiểm tra xem nếu căn bậc 2 của n bằng dạng số nguyên của căn bậc 2 của n (Tối ưu hơn)
 def kt_cp_2(n):
   print("Kiểm tra số chính phương nhưng được tối ưu")
-  time_start = time.time()
   if n**0.5 == int(n**0.5):
-    time_end = time.time()
-    runtime = time_end - time_start
-    print(f"Runtime of the function: {runtime} seconds")
     return 1
 
 #Test
