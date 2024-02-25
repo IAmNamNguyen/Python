@@ -9,10 +9,12 @@ from os.path import join
 from sys import path
 def kt_cdn(s):
     a = s.split()
-    b = ""
+    b = []
+    c = len(max(a, key= len ))
     for x in a:
-        if len(x) > len(b):
-            b = x
+        if len(x) == c:
+            b.append(x)
+    b = ", ".join(str(d) for d in b)
     return b
 
 inp = join(path[0],'4.inp')
