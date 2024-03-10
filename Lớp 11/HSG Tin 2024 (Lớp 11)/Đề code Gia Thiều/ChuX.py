@@ -16,10 +16,10 @@ In các số ở những vị trí đó
 Tương tự với hàng chéo từ phải qua trái là các tọa độ có tổng bằng n-1
  '''
 
-inport sys
+import sys
 from os.path import join
 filein = join(sys.join[0],"input.inp")
-fileout = join(sys.joun[0],"output.out")
+fileout = join(sys.join[0],"output.out")
 with open(filein, 'r') as i:
     n = int(i.readlines())
 for y in range(n):
