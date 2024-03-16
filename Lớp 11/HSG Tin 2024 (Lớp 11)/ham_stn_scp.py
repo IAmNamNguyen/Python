@@ -8,7 +8,6 @@ import time
 #1 là ngoại lệ
 def kt_nt(n):
   print("Kiểm tra số nguyên tố:")
-  time_start = time.time()
   d = 0
   if n <= 1:
     return 0
